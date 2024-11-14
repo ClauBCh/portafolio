@@ -1,373 +1,618 @@
-/* 1. RESET Y CONFIGURACIÓN BASE */
+/* Variables y Reset */
 :root {
-    box-sizing: border-box;
+    --primary: #2563eb;
+    --secondary: #4f46e5;
+    --dark: #1e293b;
+    --light: #f8fafc;
+    --accent: #06b6d4;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --error: #ef4444;
+}
+
+* {
     margin: 0;
     padding: 0;
-  }
-  
-  * {
-    box-sizing: inherit;
-  }
-  
-  .logo {
-    width: 100px;
-    aspect-ratio: 1/1;
-  }
-  
-  /* 2. VARIABLES GLOBALES */
-  :root {
-      --primary: #EC4899;
-      --primary-dark: #DB2777;
-      --primary-light: #F9A8D4;
-      --secondary: #93C5FD;
-  
-      /* Fondos */
-      --background: #0F172A;
-      --surface: rgba(15, 23, 42, 0.7);
-      --surface-light: rgba(15, 23, 42, 0.5);
-  
-      /* Efectos */
-      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.2);
-  
-      /* Bordes */
-      --border-radius-sm: 0.4rem;
-      --border-radius: 0.5rem;
-      --border-radius-lg: 1.5rem;
-  
-      /* Espaciado */
-      --spacing-xs: 0.5rem;
-      --spacing-sm: 1rem;
-      --spacing-md: 1.5rem;
-      --spacing-lg: 2rem;
-      --spacing-xl: 3rem;
-  
-      /* Layout */
-      --container-max: 1200px;
-  
-      /* Definiciones adicionales */
-      --text: #ffffff;
-      --border-light: rgba(255, 255, 255, 0.2);
-  }
-  
-  /* 3. ESTILOS BASE */
-  html {
-      scroll-behavior: smooth;
-      font-size: 16px;
-      height: 100%;
-  }
-  
-  body {
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      line-height: 1.6;
-      color: var(--text);
-      background-color: var(--background);
-      overflow-x: hidden;
-      min-height: 100%;
-  }
-  
-  /* Scrollbar personalizada */
-  * {
-      scrollbar-width: thin;
-      scrollbar-color: var(--border) var(--surface);
-  }
-  
-  ::-webkit-scrollbar {
-      width: 8px;
-  }
-  
-  ::-webkit-scrollbar-track {
-      background: var(--surface);
-  }
-  
-  ::-webkit-scrollbar-thumb {
-      background: var(--border);
-      border-radius: 2px;
-  }
-  
-  /* 4. UTILIDADES */
-  .container {
-      max-width: var(--container-max);
-      margin: 0 auto;
-      padding: 0 var(--spacing-sm);
-  }
-  
-  .grid {
-      display: grid;
-      gap: var(--spacing-lg);
-  }
-  
-  .glass {
-      background: var(--surface-light);
-      -webkit-backdrop-filter: blur(12px);
-      backdrop-filter: blur(12px);
-      border: 1px solid var(--border-light);
-  }
-  
-  @supports not (backdrop-filter: blur(12px)) {
-      .glass {
-          background: var(--surface);
-      }
-  }
-  
-  .hover-lift {
-      transition: var(--transition);
-  }
-  
-  .hover-lift:hover {
-      transform: translateY(-5px);
-  }
-  
-  .animate-fade-in-up {
-      animation: fadeInUp 0.6s ease-out forwards;
-  }
-  
-  /* 5. LAYOUT Y COMPONENTES */
-  header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      -webkit-backdrop-filter: blur(12px);
-      backdrop-filter: blur(12px);
-      background: #0f172acc;
-      border-bottom: 1px solid var(--border);
-      transition: var(--transition);
-  }
-  
-  header.scrolled {
-      padding: var(--spacing-xs) 0;
-      background: rgba(15, 23, 42, 0.95);
-  }
-  
-  nav {
-      max-width: var(--container-max);
-      margin: 0 auto;
-      padding: var(--spacing-sm);
-  }
-  
-  nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: var(--spacing-lg);
-  }
-  
-  /* 6. SECCIÓN "SOBRE MÍ" */
-  .sobre-mi-section {
-      background: url('ruta-a-tu-imagen/fondo-azul.jpg') no-repeat center center / cover;
-      color: #ffffff;
-      padding: 4rem 2rem;
-  }
-  
-  /* 7. SECCIÓN DE HABILIDADES */
-  .habilidades-seccion {
-      background-color: #1f2937;
-      padding: 4rem 2rem;
-      border-radius: 12px;
-      margin: 2rem 0;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  .habilidades-seccion h2 {
-      font-size: 2.5rem;
-      color: #ffffff;
-      margin-bottom: 1.5rem;
-  }
-  
-  .habilidades-seccion .grid {
-      display: grid;
-      gap: 2rem;
-  }
-  
-  @media (min-width: 768px) {
-      .habilidades-seccion .grid {
-          grid-template-columns: repeat(2, 1fr);
-      }
-  }
-  
-  /* 8. SECCIÓN DE CONTACTO */
-  .contacto-seccion {
-      background-color: #1f2937;
-      padding: 4rem 2rem;
-      border-radius: 12px;
-      margin: 2rem 0;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  #contacto {
-      background: linear-gradient(to bottom, #1a202c, #2d3748);
-      padding: 4rem 0;
-      backdrop-filter: blur(8px);
-  }
-  
-  #habilidades {
-    background-color: rgba(31, 41, 55, 0.3); /* Fondo translúcido */
-    padding: 4rem 2rem;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, sans-serif;
 }
 
-.skill-tag {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #ffffff;
-    padding: 0.5rem 1rem;
-    border-radius: 9999px;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
+body {
+    background: var(--light);
+    color: var(--dark);
+    overflow-x: hidden;
 }
 
-.skill-tag:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-.skill-tag i {
-    color: #f472b6; /* Color rosado para los iconos */
-}
-
-  /* Contenedor del formulario de contacto */
-  .contact-form-container {
-      max-width: var(--container-max);
-      margin: 0 auto;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(8px);
-  }
-  
-  .contact-form-container input:focus,
-  .contact-form-container textarea:focus {
-      border-color: #f472b6;
-      outline: none;
-  }
-  
-  .contact-form-container button {
-      background-color: #f472b6;
-      color: #ffffff;
-      padding: 0.75rem;
-      border-radius: 8px;
-  }
-  .contact-form-container::before {
-      content: "";
-      background-image: url("ruta-a-tu-imagen.jpg");
-      background-size: cover;
-      background-position: center;
-      opacity: 0.2;
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      border-radius: 12px;
-  }
-  
-  .contact-form-container input,
-  .contact-form-container textarea {
-      background-color: rgba(15, 23, 42, 0.8);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      padding: 0.75rem;
-      border-radius: 8px;
-      color: #ffffff;
-      transition: border-color 0.3s ease;
-  }
-  
-  .contact-form-container button {
-      background-color: #f472b6;
-      color: #ffffff;
-      padding: 0.75rem;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-  }
-  
-  .contact-form-container button:hover {
-      background-color: #d53f8c;
-  }
-  
-  /* Estilos para la sección de contacto */
-#contacto {
-    background-color: rgba(236, 72, 153, 0.3); /* Fondo rosado translúcido */
-    padding: 4rem 0;
-}
-
-/* Contenedor del formulario de contacto */
-.contact-form-container {
-    max-width: 90%;
-    margin: 0 auto;
-    background: rgba(236, 72, 153, 0.5); /* Fondo rosado más intenso */
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
     padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra */
-    backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
-.contact-form-container input,
-.contact-form-container textarea {
-    background-color: rgba(15, 23, 42, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 0.75rem;
-    border-radius: 8px;
-    color: #ffffff;
-    transition: border-color 0.3s ease;
-}
-
-.contact-form-container input:focus,
-.contact-form-container textarea:focus {
-    border-color: #f472b6;
-    outline: none;
-}
-
-/* Botón de envío */
-.contact-form-container button {
-    background-color: #f472b6;
-    color: #ffffff;
-    padding: 0.75rem;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.contact-form-container button:hover {
-    background-color: #d53f8c;
-}
-
-.whatsapp-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #25D366;
-    border-radius: 50%;
-    padding: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    transition: transform 0.3s ease;
-}
-
-.whatsapp-button:hover {
-    transform: scale(1.1);
-}
-
-.whatsapp-icon {
-    width: 30px;
-    height: 30px;
-}
-
-.whatsapp-text {
-    display: none;
-    background: #25D366;
-    color: #fff;
-    padding: 8px 12px;
-    border-radius: 8px;
+.hero::before {
+    content: '';
     position: absolute;
-    right: 60px;
-    bottom: 15px;
-    white-space: nowrap;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 200%;
+    height: 200%;
+    background: url('/api/placeholder/800/600') center/cover;
+    opacity: 0.1;
+    animation: rotate 60s linear infinite;
 }
 
-.whatsapp-button:hover .whatsapp-text {
-    display: inline-block;
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    position: relative;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+/* Buttons */
+.cta {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Calendar Section */
+.calendar-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.calendar-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.calendar-day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.calendar-day:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.calendar-day.active {
+    background: var(--accent);
+    color: white;
+}
+
+.calendar-day.event {
+    background: var(--success);
+    color: white;
+}
+
+/* Speakers Grid */
+.speakers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.speaker-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    padding-bottom: 1rem;
+}
+
+.speaker-card:hover {
+    transform: translateY(-10px);
+}
+
+.speaker-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.speaker-card h3 {
+    margin: 1rem;
+}
+
+.speaker-card p {
+    margin: 0 1rem 1rem;
+    color: #666;
+}
+
+/* Pricing Section */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pricing-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+}
+
+.pricing-card.featured::before {
+    content: 'Más Popular';
+    position: absolute;
+    top: 1rem;
+    right: -2rem;
+    background: var(--accent);
+    color: white;
+    padding: 0.5rem 3rem;
+    transform: rotate(45deg);
+}
+
+.pricing-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.price {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.price span {
+    font-size: 1rem;
+    color: #666;
+}
+
+.features {
+    list-style: none;
+    margin: 2rem 0;
+}
+
+.features li {
+    margin: 0.5rem 0;
+    color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .calendar-grid {
+        grid-template-columns: repeat(7, 1fr);
+        font-size: 0.8rem;
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* Estilos para el navbar y logo */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 25, 51, 0.9);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 0.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    width: 50px;  /* Ajusta este tamaño según tu logo */
+    height: 50px; /* Ajusta este tamaño según tu logo */
+    object-fit: contain; /* Mantiene la proporción del logo */
+}
+
+.logo-text {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .logo-text {
+        font-size: 1.2rem;
+    }
+}
+
+/* Estilos para el hero/banner */
+.hero {
+    min-height: 100vh;
+    position: relative;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Reemplaza "ruta-de-tu-banner.jpg" con la ruta real de tu imagen de banner */
+    background-image: url('assets/images/futuro-tecnologia.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 51, 255, 0.8),
+        rgba(0, 204, 255, 0.7)
+    );
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    padding: 2rem;
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1.2rem;
+    }
+}
+
+.hero {
+    min-height: 100vh;
+    position: relative;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 51, 255, 0.8),
+        rgba(0, 204, 255, 0.7)
+    );
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    padding: 2rem;
+    max-width: 800px;
+}
+
+/* Estilos para el contenido del hero */
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    padding: 2rem;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Espacio general entre elementos */
+}
+
+.hero h1 {
+    font-size: 4rem;
+    line-height: 1.2; /* Interlineado para el título */
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+    font-size: 1.5rem;
+    line-height: 1.6; /* Interlineado para el subtítulo */
+    margin: 0;
+}
+
+.hero .cta {
+    margin: 1rem 0; /* Espacio alrededor del botón */
+}
+
+.countdown {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    line-height: 1.4; /* Interlineado para el contador */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-content {
+        gap: 1.5rem; /* Menos espacio en móviles */
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+        line-height: 1.3;
+    }
+    
+    .hero p {
+        font-size: 1.2rem;
+        line-height: 1.5;
+    }
+}
+.countdown {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    border-radius: 15px;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.countdown-item {
+    color: var(--accent);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para el hero/banner */
+.hero {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Estilo para la imagen de fondo */
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('ruta-de-tu-banner.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+/* Alternativa usando etiqueta img */
+.hero-banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 1;
+}
+
+/* Overlay para mejorar legibilidad del texto */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 51, 255, 0.8),
+        rgba(0, 204, 255, 0.7)
+    );
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    padding: 2rem;
+    max-width: 1200px; /* Aumentado para pantallas más grandes */
+    width: 90%; /* Para asegurar márgenes en móviles */
+    margin: 0 auto;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 1400px) {
+    .hero-content {
+        max-width: 1000px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero-content {
+        max-width: 800px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        max-width: 100%;
+        padding: 1rem;
+    }
+    
+    /* Ajuste para móviles en orientación landscape */
+    .hero {
+        min-height: 100vh;
+    }
+}
+
+/* Para pantallas muy anchas */
+@media (min-width: 1921px) {
+    .hero-background,
+    .hero-banner {
+        background-size: 100% auto; /* Asegura que la imagen cubra todo el ancho */
+    }
+}
+
+/* Para dispositivos de alta densidad de píxeles */
+@media 
+(-webkit-min-device-pixel-ratio: 2), 
+(min-resolution: 192dpi) {
+    .hero-background {
+        background-image: url('ruta-de-tu-banner-2x.jpg'); /* Versión de mayor resolución si la tienes */
+    }
+}
+.countdown {
+    background: var(--primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    text-align: center;
+}
+.footer-logo-img {
+    width: 120px;
+    height: auto;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.footer-logo-img:hover {
+    opacity: 1;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.social-icon {
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: var(--accent);
 }
