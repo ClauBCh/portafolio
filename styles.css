@@ -1,0 +1,373 @@
+/* 1. RESET Y CONFIGURACIÓN BASE */
+:root {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  * {
+    box-sizing: inherit;
+  }
+  
+  .logo {
+    width: 100px;
+    aspect-ratio: 1/1;
+  }
+  
+  /* 2. VARIABLES GLOBALES */
+  :root {
+      --primary: #EC4899;
+      --primary-dark: #DB2777;
+      --primary-light: #F9A8D4;
+      --secondary: #93C5FD;
+  
+      /* Fondos */
+      --background: #0F172A;
+      --surface: rgba(15, 23, 42, 0.7);
+      --surface-light: rgba(15, 23, 42, 0.5);
+  
+      /* Efectos */
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.2);
+  
+      /* Bordes */
+      --border-radius-sm: 0.4rem;
+      --border-radius: 0.5rem;
+      --border-radius-lg: 1.5rem;
+  
+      /* Espaciado */
+      --spacing-xs: 0.5rem;
+      --spacing-sm: 1rem;
+      --spacing-md: 1.5rem;
+      --spacing-lg: 2rem;
+      --spacing-xl: 3rem;
+  
+      /* Layout */
+      --container-max: 1200px;
+  
+      /* Definiciones adicionales */
+      --text: #ffffff;
+      --border-light: rgba(255, 255, 255, 0.2);
+  }
+  
+  /* 3. ESTILOS BASE */
+  html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      height: 100%;
+  }
+  
+  body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--background);
+      overflow-x: hidden;
+      min-height: 100%;
+  }
+  
+  /* Scrollbar personalizada */
+  * {
+      scrollbar-width: thin;
+      scrollbar-color: var(--border) var(--surface);
+  }
+  
+  ::-webkit-scrollbar {
+      width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+      background: var(--surface);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+      background: var(--border);
+      border-radius: 2px;
+  }
+  
+  /* 4. UTILIDADES */
+  .container {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 var(--spacing-sm);
+  }
+  
+  .grid {
+      display: grid;
+      gap: var(--spacing-lg);
+  }
+  
+  .glass {
+      background: var(--surface-light);
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-light);
+  }
+  
+  @supports not (backdrop-filter: blur(12px)) {
+      .glass {
+          background: var(--surface);
+      }
+  }
+  
+  .hover-lift {
+      transition: var(--transition);
+  }
+  
+  .hover-lift:hover {
+      transform: translateY(-5px);
+  }
+  
+  .animate-fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+  }
+  
+  /* 5. LAYOUT Y COMPONENTES */
+  header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+      background: #0f172acc;
+      border-bottom: 1px solid var(--border);
+      transition: var(--transition);
+  }
+  
+  header.scrolled {
+      padding: var(--spacing-xs) 0;
+      background: rgba(15, 23, 42, 0.95);
+  }
+  
+  nav {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: var(--spacing-sm);
+  }
+  
+  nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: var(--spacing-lg);
+  }
+  
+  /* 6. SECCIÓN "SOBRE MÍ" */
+  .sobre-mi-section {
+      background: url('ruta-a-tu-imagen/fondo-azul.jpg') no-repeat center center / cover;
+      color: #ffffff;
+      padding: 4rem 2rem;
+  }
+  
+  /* 7. SECCIÓN DE HABILIDADES */
+  .habilidades-seccion {
+      background-color: #1f2937;
+      padding: 4rem 2rem;
+      border-radius: 12px;
+      margin: 2rem 0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .habilidades-seccion h2 {
+      font-size: 2.5rem;
+      color: #ffffff;
+      margin-bottom: 1.5rem;
+  }
+  
+  .habilidades-seccion .grid {
+      display: grid;
+      gap: 2rem;
+  }
+  
+  @media (min-width: 768px) {
+      .habilidades-seccion .grid {
+          grid-template-columns: repeat(2, 1fr);
+      }
+  }
+  
+  /* 8. SECCIÓN DE CONTACTO */
+  .contacto-seccion {
+      background-color: #1f2937;
+      padding: 4rem 2rem;
+      border-radius: 12px;
+      margin: 2rem 0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  #contacto {
+      background: linear-gradient(to bottom, #1a202c, #2d3748);
+      padding: 4rem 0;
+      backdrop-filter: blur(8px);
+  }
+  
+  #habilidades {
+    background-color: rgba(31, 41, 55, 0.3); /* Fondo translúcido */
+    padding: 4rem 2rem;
+}
+
+.skill-tag {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.skill-tag:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.skill-tag i {
+    color: #f472b6; /* Color rosado para los iconos */
+}
+
+  /* Contenedor del formulario de contacto */
+  .contact-form-container {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(8px);
+  }
+  
+  .contact-form-container input:focus,
+  .contact-form-container textarea:focus {
+      border-color: #f472b6;
+      outline: none;
+  }
+  
+  .contact-form-container button {
+      background-color: #f472b6;
+      color: #ffffff;
+      padding: 0.75rem;
+      border-radius: 8px;
+  }
+  .contact-form-container::before {
+      content: "";
+      background-image: url("ruta-a-tu-imagen.jpg");
+      background-size: cover;
+      background-position: center;
+      opacity: 0.2;
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      border-radius: 12px;
+  }
+  
+  .contact-form-container input,
+  .contact-form-container textarea {
+      background-color: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 0.75rem;
+      border-radius: 8px;
+      color: #ffffff;
+      transition: border-color 0.3s ease;
+  }
+  
+  .contact-form-container button {
+      background-color: #f472b6;
+      color: #ffffff;
+      padding: 0.75rem;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+  }
+  
+  .contact-form-container button:hover {
+      background-color: #d53f8c;
+  }
+  
+  /* Estilos para la sección de contacto */
+#contacto {
+    background-color: rgba(236, 72, 153, 0.3); /* Fondo rosado translúcido */
+    padding: 4rem 0;
+}
+
+/* Contenedor del formulario de contacto */
+.contact-form-container {
+    max-width: 90%;
+    margin: 0 auto;
+    background: rgba(236, 72, 153, 0.5); /* Fondo rosado más intenso */
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra */
+    backdrop-filter: blur(8px);
+}
+
+.contact-form-container input,
+.contact-form-container textarea {
+    background-color: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.75rem;
+    border-radius: 8px;
+    color: #ffffff;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form-container input:focus,
+.contact-form-container textarea:focus {
+    border-color: #f472b6;
+    outline: none;
+}
+
+/* Botón de envío */
+.contact-form-container button {
+    background-color: #f472b6;
+    color: #ffffff;
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form-container button:hover {
+    background-color: #d53f8c;
+}
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    border-radius: 50%;
+    padding: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.whatsapp-text {
+    display: none;
+    background: #25D366;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    position: absolute;
+    right: 60px;
+    bottom: 15px;
+    white-space: nowrap;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-button:hover .whatsapp-text {
+    display: inline-block;
+}

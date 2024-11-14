@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="es" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claudia Chang | UX/UI Designer & Publicista</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/icons/6.png">
+    <link rel="apple-touch-icon" href="assets/icons/6.png">
+    
+    <!-- Meta tags para SEO -->
+    <meta name="description" content="Portfolio de Claudia Chang, diseñadora UX/UI y publicista con más de 20 años de experiencia creando experiencias digitales intuitivas">
+    <meta name="keywords" content="UX/UI, diseño, publicidad, experiencia de usuario, diseño de interfaces">
+    <meta name="author" content="Claudia Barahona Chang">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Claudia Chang | UX/UI Designer & Publicista">
+    <meta property="og:description" content="Diseñadora UX/UI especializada en crear experiencias digitales intuitivas y funcionales">
+    <meta property="og:image" content="og-image.png">
+    <meta property="og:url" content="https://tudominio.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="./js/main.js" type="module" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+      // Función init
+      const init = () => {
+        // ...
+      };
+      document.addEventListener('DOMContentLoaded', init);
+    </script>
+   
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-XXXXXXXXXX'); // Reemplaza con tu propio ID de seguimiento
+    </script>
+
+    <!-- Script de reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-950 text-gray-100">
+    <!-- Skip to main content - Accesibilidad -->
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:p-4 focus:bg-blue-.contact-form-container input:focus,
+    .contact-form-container textarea:focus {
+        border-color: #f472b6;
+        outline: none;
+    }
+    
+    .contact-form-container button {
+        background-color: #f472b6;
+        color: #ffffff;
+        padding: 0.75rem;
+        border-radius: 8px;
+    }00 focus:z-50">
+        Saltar al contenido principal
+    </a>
+
+    <!-- Header con navegación y logo -->
+    <header class="fixed w-full top-0 z-50 bg-gray-950/80 backdrop-blur-md">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0" aria-label="Navegación principal">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="#inicio" class="flex items-center logo-container" aria-label="Inicio - Claudia Chang">
+                        <img 
+                            src="assets/images/logos/CH_punto.png" 
+                            alt="Logo Claudia Chang"
+                            class="logo-svg h-48 w-48 object-contain"
+                            width="80"
+                            height="80"
+                        >
+                    </a>
+                </div>
+                
+                <!-- Menú móvil -->
+                <button 
+                    class="md:hidden flex items-center p-2" 
+                    aria-label="Abrir menú de navegación" 
+                    aria-expanded="false"
+                    aria-controls="mobile-menu"
+                    id="mobile-menu-button">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+
+                <!-- Menú desktop -->
+                <div class="hidden md:block">
+                    <ul class="ml-10 flex items-baseline space-x-4" role="menubar">
+                        <li role="none"><a href="#inicio" class="hover:bg-gray-800/50 px-3 py-2 rounded-md text-sm font-medium transition-all" role="menuitem">Inicio</a></li>
+                        <li role="none"><a href="#sobre-mi" class="hover:bg-gray-800/50 px-3 py-2 rounded-md text-sm font-medium transition-all" role="menuitem">Sobre Mí</a></li>
+                        <li role="none"><a href="#proyectos" class="hover:bg-gray-800/50 px-3 py-2 rounded-md text-sm font-medium transition-all" role="menuitem">Proyectos</a></li>
+                        <li role="none"><a href="#contacto" class="hover:bg-gray-800/50 px-3 py-2 rounded-md text-sm font-medium transition-all" role="menuitem">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Menú móvil expandible -->
+            <div class="md:hidden hidden" id="mobile-menu" role="menu">
+                <ul class="px-2 pt-2 pb-3 space-y-1">
+                    <li role="none"><a href="#inicio" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800/50 transition-all" role="menuitem">Inicio</a></li>
+                    <li role="none"><a href="#sobre-mi" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800/50 transition-all" role="menuitem">Sobre Mí</a></li>
+                    <li role="none"><a href="#proyectos" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800/50 transition-all" role="menuitem">Proyectos</a></li>
+                    <li role="none"><a href="#contacto" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800/50 transition-all" role="menuitem">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main id="main">
+
+        <!-- Hero Section -->
+        <section id="inicio" class="hero-section min-h-screen flex items-center justify-center relative overflow-hidden pt-12 pb-2" aria-labelledby="hero-title">
+            <div class="hero-background absolute inset-0">
+                <img src="assets/images/toned-image-of-blue-palm-leaf-on-black-2023-11-27-05-14-01-utc.jpg" alt="Imagen de fondo" class="w-full h-full object-cover" aria-hidden="true">
+                <div class="absolute inset-0 bg-gradient-to-b from-blue-500/70 to-purple-600/70 backdrop-blur-sm"></div>
+            </div>
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 text-white" id="hero-title">
+                    Publicista y Diseñadora UX/UI
+                </h1>
+                <p class="text-lg sm:text-xl md:text-2xl text-gray-200 mb-8">
+                    Creando experiencias únicas
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#proyectos" class="bg-pink-500 hover:bg-blue-500 px-6 py-3 rounded-lg font-medium transition-all focus:ring-2 focus:ring-offset-2 focus:ring-pink-500" role="button">Proyectos</a>
+                    <a href="#contacto" class="border border-pink-500 hover:border-blue-500 px-6 py-3 rounded-lg font-medium transition-all focus:ring-2 focus:ring-offset-2 focus:ring-pink-500" role="button">Escríbeme</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Sobre Mí -->
+        <section id="sobre-mi" class="py-10 scroll-mt-5" aria-labelledby="sobre-mi-section">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+                    
+                    <!-- Columna de imagen -->
+                    <div class="relative group flex justify-center">
+                        <div class="aspect-w-1 aspect-h-1 bg-gray-900 rounded-3xl overflow-hidden glass transform transition-transform duration-500 hover:scale-[1.02] w-3/4 md:w-full mx-auto">
+                            <img 
+                                src="assets/images/1.png" 
+                                alt="Retrato de Claudia Barahona Chang"
+                                class="w-full h-full object-cover transition-transform duration-800 hover:scale-105"
+                                loading="lazy"
+                            >
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+                        <div class="absolute -z-10 top-4 left-4 w-full h-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl transition-transform duration-500 group-hover:translate-x-1 group-hover:translate-y-1"></div>
+                    </div>
+
+                    <!-- Columna de texto dividida en dos -->
+                    <div class="space-y-6 bg-gray-900/50 p-6 rounded-3xl backdrop-blur-sm">
+
+                        <!-- Introducción (ancho completo) -->
+                        <div class="space-y-6">
+                            <h3 class="text-2xl font-regular text-pink-300">
+                                <strong>¡Hola! Soy Claudia Barahona Chang,</strong> 
+                                <span class="text-blue-200">publicista y profesional de UX/UI</span>
+                            </h3>
+                            <p class="text-blue-200 text-lg leading-relaxed mt-4">
+                                <strong>Transforma la imagen de tu marca y conecta con tus audiencias de manera única, tendrás garantizado:</strong>
+                            </p>
+                            <ul class="list-disc pl-5 text-blue-200 space-y-4 mt-4">
+                                <li>Campañas efectivas y experiencias digitales exitosas</li>
+                                <li>Fortalecimiento en el posicionamiento de tu marca, servicio o producto en el mercado</li>
+                                <li>Experiencias audiovisuales innovadoras que capturan la esencia del mensaje</li>
+                            </ul>                            
+                        </div>
+                        
+                        <!-- Experiencia -->
+                        <div class="space-y-2">
+                            <h4 class="text-xl font-semibold text-pink-300">Experiencia</h4>
+                            <div class="text-blue-200 space-y-4 leading-relaxed">
+                                <p><strong>Más de 20 años de experiencia</strong></p>
+                                <p><strong>Diseño intuitivo, creativo, eficiente y de calidad</strong></p>
+                                <p>Resolución de problemas con creatividad y precisión</p>
+                                <p><strong>Trabajo en equipo</strong> y actualización permanente.</p>                        
+                            </div>
+                        </div>
+                    </div>  
+            </div>
+            </div>
+        </section>
+
+
+<!-- Sección de Habilidades -->
+<section id="habilidades" class="py-16 bg-gray-900/30" aria-labelledby="habilidades-title">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-6xl font-bold mb-12 text-center text-white" id="habilidades-title">
+            <i class="fas fa-star text-pink-500 mb-4"></i>
+            <span class="block">Habilidades</span>
+        </h2>
+        
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8">
+
+                <!-- Diseño y UX/UI -->
+                <div class="p-6 bg-gray-900/50 rounded-xl backdrop-blur-sm">
+                    <h3 class="text-2xl font-semibold text-pink-300 mb-6">
+                        <i class="fas fa-palette mr-2"></i>Diseño y UX/UI
+                    </h3>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="skill-tag">
+                            <i class="fas fa-desktop"></i>
+                            <span>UI Design</span>
+                        </div>
+                        <div class="skill-tag">
+                            <i class="fas fa-users"></i>
+                            <span>UX Research</span>
+                        </div>
+                        <div class="skill-tag">
+                            <i class="fas fa-pencil-ruler"></i>
+                            <span>Wireframing</span>
+                        </div>
+                        <div class="skill-tag">
+                            <i class="fas fa-sitemap"></i>
+                            <span>Prototyping</span>
+                        </div>
+                        <div class="skill-tag">
+                            <i class="fas fa-paint-brush"></i>
+                            <span>Diseño Web</span>
+                        </div>
+                        <div class="skill-tag">
+                            <i class="fas fa-layer-group"></i>
+                            <span>Diseño de marca</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Software -->
+                <div class="p-6 bg-gray-900/50 rounded-xl backdrop-blur-sm">
+                    <h3 class="text-2xl font-semibold text-pink-300 mb-6">
+                        <i class="fas fa-laptop-code mr-2"></i>Software
+                    </h3>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="skill-tag">
+                            <i class="fab fa-figma"></i>
+                            <span>Figma</span>
+                        </div>
+                        <div class="skill-tag">
+                            <i class="fas fa-brush"></i>
+                            <span>Adobe XD</span>
+                        </div>
+                        <div class="skill-tag">
+                            <i class="fas fa-image"></i>
+                            <span>Photoshop</span>
+                        </div>
+                        <div class="skill-tag">
+                            <i class="fas fa-bezier-curve"></i>
+                            <span>Illustrator</span>
+                        </div>
+                        <div class="skill-tag">
+                            <i class="fas fa-book"></i>
+                            <span>InDesign</span>
+                        </div>
+                        <div class="skill-tag">
+                            <i class="fas fa-film"></i>
+                            <span>Premiere</span>
+                        </div>
+                    </div>
+                    <div class="skill-tag">
+                        <i class="fas fa-palette"></i>
+                        <span>Adobe Suite</span>
+                    </div>
+                    <div class="skill-tag">
+                        <i class="fas fa-file-word"></i>
+                        <span>Office</span>
+                    </div>
+                    <div class="skill-tag">
+                        <i class="fas fa-video"></i>
+                        <span>Zoom</span>
+                    </div>
+                    <div class="skill-tag">
+                        <i class="fas fa-cut"></i>
+                        <span>CapCut</span>
+                    </div>
+                    <div class="skill-tag">
+                        <i class="fab fa-apple"></i>
+                        <span>Mac iOS</span>
+                    </div>
+                </div>
+            </div>
+            <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+
+            <!-- Marketing Digital -->
+            <div class="p-6 bg-gray-900/50 rounded-xl backdrop-blur-sm">
+                <h3 class="text-2xl font-semibold text-pink-300 mb-6">
+                    <i class="fas fa-bullhorn mr-2"></i>Marketing Digital
+                </h3>
+                <div class="flex flex-wrap gap-3">
+                    <div class="skill-tag">
+                        <i class="fas fa-search"></i>
+                        <span>SEO</span>
+                    </div>
+                    <div class="skill-tag">
+                        <i class="fas fa-copyright"></i>
+                        <span>Branding</span>
+                    </div>
+                    <div class="skill-tag">
+                        <i class="fas fa-pen-fancy"></i>
+                        <span>Copywriting</span>
+                    </div>
+                    <div class="skill-tag">
+                        <i class="fas fa-hashtag"></i>
+                        <span>Social Media</span>
+                    </div>
+                    <div class="skill-tag">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Analytics</span>
+                    </div>
+                    <div class="skill-tag">
+                        <i class="fas fa-search-plus"></i>
+                        <span>Investigación</span>
+                    </div>
+                    <div class="skill-tag">
+                        <i class="fas fa-lightbulb"></i>
+                        <span>Creatividad</span>
+                    </div>
+                    <div class="skill-tag">
+                        <i class="fas fa-ad"></i>
+                        <span>Publicidad en Redes Sociales</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Herramientas -->
+            <div class="p-6 bg-gray-900/50 rounded-xl backdrop-blur-sm">
+                <h3 class="text-2xl font-semibold text-pink-300 mb-6">
+                    <i class="fas fa-tools mr-2"></i>Herramientas
+                </h3>
+                <div class="flex flex-wrap gap-3">
+                    <div class="skill-tag">
+                        <i class="fab fa-discord"></i>
+                        <span>Discord</span>
+                    </div>
+                    <div class="skill-tag">
+                        <i class="fab fa-trello"></i>
+                        <span>Trello</span>
+                    </div>
+                    <div class="skill-tag">
+                        <i class="fab fa-google"></i>
+                        <span>Google Suite</span>
+                    </div>
+                    <div class="skill-tag">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Similarweb</span>
+                    </div>
+                    <div class="skill-tag">
+                        <i class="fas fa-puzzle-piece"></i>
+                        <span>Octopus</span>
+                    </div>
+                    <div class="skill-tag">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Miro</span>
+                    </div>
+                    <div class="skill-tag">
+                        <i class="fas fa-code"></i>
+                        <span>Visual Studio Code</span>
+                    </div>
+                    <div class="skill-tag">
+                        <i class="fas fa-clipboard"></i>
+                        <span>Notion</span>
+                    </div>
+                    <div class="skill-tag">
+                        <i class="fas fa-clipboard"></i>
+                        <span>Zoho Forms</span>
+                    </div>
+                    <div class="skill-tag">
+                        <i class="fas fa-cogs"></i>
+                        <span>Odoo</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+   <!-- Sección Proyectos -->
+
+    <section id="proyectos" class="py-16 bg-gray-900 text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-6xl font-bold mb-12 text-center text-white" id="proyectos-title">
+                <i class="fas fa-folder-open text-blue-400 mb-4"></i>
+                <span class="block">Proyectos</span>
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Proyecto 1 -->
+                <article class="group relative overflow-hidden rounded-xl bg-gray-900 h-[400px]">
+                    <img 
+                        src="assets/images/Captura de pantalla 2024-11-03 a las 18.43.32.png" 
+                        alt="Proyecto 1" 
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        loading="lazy"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <h3 class="text-xl font-bold mb-2">Corporación Municipal La Serena</h3>
+                            <p class="text-gray-300">Caso seleccionado para llevar a cabo estudios e investigación usuaria</p>
+                            <a href="https://www.figma.com/slides/QefkiImmylTpvXoSJqxGVX/Presentacion-CLS?node-id=173-126&t=mKTndNeI7gwpAfLd-1" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            class="inline-flex items-center gap-2 mt-4 text-blue-400 hover:text-blue-300 transition-colors">
+                                Ver más 
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Proyecto 2 -->
+                <article class="group relative overflow-hidden rounded-xl bg-gray-900 h-[400px]">
+                    <img 
+                        src="assets/images/Captura de pantalla 2024-11-03 a las 18.57.25.png" 
+                        alt="Vista previa del proyecto Chilote Shoes" 
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        loading="lazy"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <h3 class="text-xl font-bold mb-2">Chilote Shoes</h3>
+                            <p class="text-gray-300">Evaluación heurística que resultó en la optimización del sitio web de Chilote Shoes</p>
+                            <a href="https://www.figma.com/proto/YeREScetz7KCJMJAieBnnH/New_chiloteShoes_Alta-Calidad?node-id=325-283&starting-point-node-id=325%3A283" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            class="inline-flex items-center gap-2 mt-4 text-blue-400 hover:text-blue-300 transition-colors">
+                                Ver más 
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Proyecto 3 -->
+                <article class="group relative overflow-hidden rounded-xl bg-gray-900 h-[400px]">
+                    <img 
+                        src="assets/images/Captura de pantalla 2024-11-02 a las 15.13.07.png" 
+                        alt="Vista previa del proyecto MaiFud" 
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        loading="lazy"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <h3 class="text-xl font-bold mb-2">MaiFud</h3>
+                            <p class="text-gray-300">Investigación UX/UI y prototipado de mejoras detectadas</p>
+                            <a href="https://www.figma.com/proto/tLfc7rAidvT5wmCSaEf3gw/maifud_alta?node-id=1-2&starting-point-node-id=1%3A2" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            class="inline-flex items-center gap-2 mt-4 text-blue-400 hover:text-blue-300 transition-colors">
+                                Ver más 
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                 <!-- Proyecto 4 -->
+                 <article class="group relative overflow-hidden rounded-xl bg-gray-900 h-[400px]">
+                    <img 
+                        src="assets/images/TechFuture.png" 
+                        alt="Vista previa del proyecto TechFuture" 
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        loading="lazy"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <h3 class="text-xl font-bold mb-2">TechFuture 2025</h3>
+                            <p class="text-gray-300">Investigación UX/UI y aplicación de conocimientos HTML, CSS, JavaScript y PHP</p>
+                            <a href="https://claubch.github.io/mi-examen-ui/" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            class="inline-flex items-center gap-2 mt-4 text-blue-400 hover:text-blue-300 transition-colors">
+                                Ver más 
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+<!-- Formulario de contacto -->
+<section id="contacto" class="py-16 bg-gray-900 text-white mb-12"> <!-- Se añadió mb-12 para separar del footer -->
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-6xl font-bold mb-12 text-center text-white" id="contacto-title">
+            <i class="fas fa-envelope text-pink-400 mb-4"></i>
+            <span class="block">Escríbeme</span>
+        </h2>
+        <div class="contact-form-container p-8 rounded-lg shadow-lg relative">
+            <form action="procesar-formulario.php" method="POST">
+                <div class="mb-4">
+                    <label for="name" class="block text-lg font-medium mb-2">Nombre</label>
+                    <input type="text" id="name" name="name" required
+                        class="w-full px-4 py-3 rounded-lg bg-gray-900/70 border border-gray-700 text-white placeholder-gray-400 focus:border-pink-500 focus:outline-none">
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-lg font-medium mb-2">Correo Electrónico</label>
+                    <input type="email" id="email" name="email" required
+                        class="w-full px-4 py-3 rounded-lg bg-gray-900/70 border border-gray-700 text-white placeholder-gray-400 focus:border-pink-500 focus:outline-none">
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block text-lg font-medium mb-2">Mensaje</label>
+                    <textarea id="message" name="message" rows="5" required
+                        class="w-full px-4 py-3 rounded-lg bg-gray-900/70 border border-gray-700 text-white placeholder-gray-400 focus:border-pink-500 focus:outline-none"></textarea>
+                </div>
+
+                <!-- Token de reCAPTCHA -->
+                <input type="hidden" name="recaptcha_token" id="recaptchaToken">
+
+                <!-- Añadir reCAPTCHA -->
+                <div class="g-recaptcha" data-sitekey="6LcmZ3QqAAAAADWPFON6nq1OI-ZxlcDRmOSK_vMi"></div>
+                <br>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer bg-gray-900 border-t border-gray-800 py-12 mt-8 text-white"> <!-- Se agregó mt-8 para mayor separación -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-center md:text-left">
+                © 2025 Claudia Barahona Chang. Todos los derechos reservados.
+            </p>
+
+            <!-- Social Links -->
+            <div class="social-links flex space-x-8" aria-label="Redes sociales">
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/claudia-barahona-chang-29076a26/" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="text-white hover:text-[#0077b5] transition-all transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#0077b5] rounded-full"
+                   aria-label="LinkedIn">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect width="4" height="12" x="2" y="9"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+                
+                <!-- Twitter/X -->
+                <a href="https://x.com/claucatb" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="text-white hover:text-[#1DA1F2] transition-all transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1DA1F2] rounded-full"
+                   aria-label="Twitter">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                    </svg>
+                </a>
+                
+                <!-- Behance -->
+                <a href="https://www.behance.net/claudiabarahona" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="text-white hover:text-[#1769ff] transition-all transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1769ff] rounded-full"
+                   aria-label="Behance">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3H6C4.34315 3 3 4.34315 3 6V18C3 19.6569 4.34315 21 6 21H18C19.6569 21 21 19.6569 21 18V12"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 14C7 12.3431 8.34315 11 10 11H14C15.6569 11 17 12.3431 17 14C17 15.6569 15.6569 17 14 17H7V7H13C14.6569 7 16 8.34315 16 10C16 11.6569 14.6569 13 13 13H7"></path>
+                    </svg>
+                </a>
+                
+                <!-- WhatsApp -->
+                <a href="https://wa.me/+56975782503?text=¡Hola! Me gustaría recibir más información." 
+                   class="whatsapp-button" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   aria-label="Contáctanos por WhatsApp">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" class="whatsapp-icon w-7 h-7">
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+</main>
+
+<!-- Notificaciones Toast -->
+<div id="toast-container" class="fixed bottom-4 right-4 z-50" role="alert" aria-live="polite"></div>
+
+<!-- Overlay de carga -->
+<div id="loading-overlay" class="fixed inset-0 bg-gray-900/80 backdrop-blur-sm hidden items-center justify-center z-50">
+    <div class="animate-spin rounded-full h-12 w-12 border-4 border-pink-500 border-t-transparent"></div>
+</div>
+</body>
+</html>
+        
