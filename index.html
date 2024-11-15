@@ -53,12 +53,12 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-gray-950 text-gray-100">
+<body class="bg-gray-900 text-gray-100">
     <!-- Skip to main content - Accesibilidad -->
     <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:p-4 focus:bg-blue-.contact-form-container input:focus,
     .contact-form-container textarea:focus {
         border-color: #f472b6;
-        outline: none;
+        outline: #f472b6;
     }
     
     .contact-form-container button {
@@ -71,8 +71,8 @@
     </a>
 
     <!-- Header con navegación y logo -->
-    <header class="fixed w-full top-0 z-50 bg-gray-950 backdrop-blur-md">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0" aria-label="Navegación principal">
+    <header class="fixed w-full top-1 z-50 bg-gray-950 backdrop-blur-md">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-2" aria-label="Navegación principal">
             <div class="flex items-center justify-between h-16">
                 <div class="flex-shrink-0">
                     <a href="#inicio" class="flex items-center logo-container" aria-label="Inicio - Claudia Chang">
@@ -101,10 +101,10 @@
                 <!-- Menú desktop -->
                 <div class="hidden md:block">
                     <ul class="ml-10 flex items-baseline space-x-4" role="menubar">
-                        <li role="none"><a href="#inicio" class="hover:bg-gray-800/50 px-3 py-2 rounded-md text-sm font-medium transition-all" role="menuitem">Inicio</a></li>
-                        <li role="none"><a href="#sobre-mi" class="hover:bg-gray-800/50 px-3 py-2 rounded-md text-sm font-medium transition-all" role="menuitem">Sobre Mí</a></li>
-                        <li role="none"><a href="#proyectos" class="hover:bg-gray-800/50 px-3 py-2 rounded-md text-sm font-medium transition-all" role="menuitem">Proyectos</a></li>
-                        <li role="none"><a href="#contacto" class="hover:bg-gray-800/50 px-3 py-2 rounded-md text-sm font-medium transition-all" role="menuitem">Contacto</a></li>
+                        <li role="none"><a href="#inicio" class="hover:bg-gray-800 px-3 py-2 rounded-md text-sm font-medium transition-all" role="menuitem">Inicio</a></li>
+                        <li role="none"><a href="#sobre-mi" class="hover:bg-gray-800 px-3 py-2 rounded-md text-sm font-medium transition-all" role="menuitem">Sobre Mí</a></li>
+                        <li role="none"><a href="#proyectos" class="hover:bg-gray-800 px-3 py-2 rounded-md text-sm font-medium transition-all" role="menuitem">Proyectos</a></li>
+                        <li role="none"><a href="#contacto" class="hover:bg-gray-800 px-3 py-2 rounded-md text-sm font-medium transition-all" role="menuitem">Contacto</a></li>
                     </ul>
                 </div>
             </div>
@@ -112,10 +112,10 @@
             <!-- Menú móvil expandible -->
             <div class="md:hidden hidden" id="mobile-menu" role="menu">
                 <ul class="px-2 pt-2 pb-3 space-y-1">
-                    <li role="none"><a href="#inicio" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800/50 transition-all" role="menuitem">Inicio</a></li>
-                    <li role="none"><a href="#sobre-mi" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800/50 transition-all" role="menuitem">Sobre Mí</a></li>
-                    <li role="none"><a href="#proyectos" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800/50 transition-all" role="menuitem">Proyectos</a></li>
-                    <li role="none"><a href="#contacto" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800/50 transition-all" role="menuitem">Contacto</a></li>
+                    <li role="none"><a href="#inicio" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800 transition-all" role="menuitem">Inicio</a></li>
+                    <li role="none"><a href="#sobre-mi" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800 transition-all" role="menuitem">Sobre Mí</a></li>
+                    <li role="none"><a href="#proyectos" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800 transition-all" role="menuitem">Proyectos</a></li>
+                    <li role="none"><a href="#contacto" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800 transition-all" role="menuitem">Contacto</a></li>
                 </ul>
             </div>
         </nav>
