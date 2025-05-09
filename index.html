@@ -53,12 +53,12 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-gray-800 text-gray-100">
+<body class="bg-gray-950 text-gray-100">
     <!-- Skip to main content - Accesibilidad -->
     <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:p-4 focus:bg-blue-.contact-form-container input:focus,
     .contact-form-container textarea:focus {
         border-color: #f472b6;
-        outline: #f472b6;
+        outline: none;
     }
     
     .contact-form-container button {
@@ -71,17 +71,17 @@
     </a>
 
     <!-- Header con navegación y logo -->
-    <header class="fixed w-full top-1 z-50 bg-gray-950 backdrop-blur-md">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-2" aria-label="Navegación principal">
+    <header class="fixed w-full top-0 z-50 bg-gray-950/80 backdrop-blur-md">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0" aria-label="Navegación principal">
             <div class="flex items-center justify-between h-16">
                 <div class="flex-shrink-0">
                     <a href="#inicio" class="flex items-center logo-container" aria-label="Inicio - Claudia Chang">
                         <img 
                             src="assets/images/logos/CH_punto.png" 
                             alt="Logo Claudia Chang"
-                            class="logo-svg h-40 w-40 object-contain"
-                            width="70"
-                            height="70"
+                            class="logo-svg h-48 w-48 object-contain"
+                            width="80"
+                            height="80"
                         >
                     </a>
                 </div>
@@ -101,10 +101,10 @@
                 <!-- Menú desktop -->
                 <div class="hidden md:block">
                     <ul class="ml-10 flex items-baseline space-x-4" role="menubar">
-                        <li role="none"><a href="#inicio" class="hover:bg-gray-800 px-3 py-2 rounded-md text-sm font-medium transition-all" role="menuitem">Inicio</a></li>
-                        <li role="none"><a href="#sobre-mi" class="hover:bg-gray-800 px-3 py-2 rounded-md text-sm font-medium transition-all" role="menuitem">Sobre Mí</a></li>
-                        <li role="none"><a href="#proyectos" class="hover:bg-gray-800 px-3 py-2 rounded-md text-sm font-medium transition-all" role="menuitem">Proyectos</a></li>
-                        <li role="none"><a href="#contacto" class="hover:bg-gray-800 px-3 py-2 rounded-md text-sm font-medium transition-all" role="menuitem">Contacto</a></li>
+                        <li role="none"><a href="#inicio" class="hover:bg-gray-800/50 px-3 py-2 rounded-md text-sm font-medium transition-all" role="menuitem">Inicio</a></li>
+                        <li role="none"><a href="#sobre-mi" class="hover:bg-gray-800/50 px-3 py-2 rounded-md text-sm font-medium transition-all" role="menuitem">Sobre Mí</a></li>
+                        <li role="none"><a href="#proyectos" class="hover:bg-gray-800/50 px-3 py-2 rounded-md text-sm font-medium transition-all" role="menuitem">Proyectos</a></li>
+                        <li role="none"><a href="#contacto" class="hover:bg-gray-800/50 px-3 py-2 rounded-md text-sm font-medium transition-all" role="menuitem">Contacto</a></li>
                     </ul>
                 </div>
             </div>
@@ -112,10 +112,10 @@
             <!-- Menú móvil expandible -->
             <div class="md:hidden hidden" id="mobile-menu" role="menu">
                 <ul class="px-2 pt-2 pb-3 space-y-1">
-                    <li role="none"><a href="#inicio" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800 transition-all" role="menuitem">Inicio</a></li>
-                    <li role="none"><a href="#sobre-mi" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800 transition-all" role="menuitem">Sobre Mí</a></li>
-                    <li role="none"><a href="#proyectos" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800 transition-all" role="menuitem">Proyectos</a></li>
-                    <li role="none"><a href="#contacto" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800 transition-all" role="menuitem">Contacto</a></li>
+                    <li role="none"><a href="#inicio" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800/50 transition-all" role="menuitem">Inicio</a></li>
+                    <li role="none"><a href="#sobre-mi" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800/50 transition-all" role="menuitem">Sobre Mí</a></li>
+                    <li role="none"><a href="#proyectos" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800/50 transition-all" role="menuitem">Proyectos</a></li>
+                    <li role="none"><a href="#contacto" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800/50 transition-all" role="menuitem">Contacto</a></li>
                 </ul>
             </div>
         </nav>
@@ -143,7 +143,7 @@
         </section>
 
         <!-- Sección Sobre Mí -->
-        <section id="sobre-mi" class="py-10 scroll-mt-5 bg-gray-900" aria-labelledby="sobre-mi-section">
+        <section id="sobre-mi" class="py-10 scroll-mt-5" aria-labelledby="sobre-mi-section">
             <div class="container mx-auto px-4">
                 <div class="grid md:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
                     
@@ -197,7 +197,7 @@
 
 
 <!-- Sección de Habilidades -->
-<section id="habilidades" class="py-16 bg-gray-800" aria-labelledby="habilidades-title">
+<section id="habilidades" class="py-16 bg-gray-900/30" aria-labelledby="habilidades-title">
     <div class="container mx-auto px-4">
         <h2 class="text-3xl md:text-6xl font-bold mb-12 text-center text-white" id="habilidades-title">
             <i class="fas fa-star text-pink-500 mb-4"></i>
@@ -270,121 +270,124 @@
                             <i class="fas fa-film"></i>
                             <span>Premiere</span>
                         </div>
-                        <div class="skill-tag">
-                            <i class="fas fa-palette"></i>
-                            <span>Adobe Suite</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fas fa-file-word"></i>
-                            <span>Office</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fas fa-video"></i>
-                            <span>Zoom</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fas fa-cut"></i>
-                                <span>CapCut</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fab fa-apple"></i>
-                            <span>Mac iOS</span>
-                        </div>
+                    </div>
+                    <div class="skill-tag">
+                        <i class="fas fa-palette"></i>
+                        <span>Adobe Suite</span>
+                    </div>
+                    <div class="skill-tag">
+                        <i class="fas fa-file-word"></i>
+                        <span>Office</span>
+                    </div>
+                    <div class="skill-tag">
+                        <i class="fas fa-video"></i>
+                        <span>Zoom</span>
+                    </div>
+                    <div class="skill-tag">
+                        <i class="fas fa-cut"></i>
+                        <span>CapCut</span>
+                    </div>
+                    <div class="skill-tag">
+                        <i class="fab fa-apple"></i>
+                        <span>Mac iOS</span>
                     </div>
                 </div>
+            </div>
+            <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
 
-                <!-- Marketing Digital -->
-                <div class="p-6 bg-gray-900/50 rounded-xl backdrop-blur-sm">
-                    <h3 class="text-2xl font-semibold text-pink-300 mb-6">
-                        <i class="fas fa-bullhorn mr-2"></i>Marketing Digital
-                    </h3>
-                    <div class="flex flex-wrap gap-3">
-                        <div class="skill-tag">
-                            <i class="fas fa-search"></i>
-                            <span>SEO</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fas fa-copyright"></i>
-                            <span>Branding</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fas fa-pen-fancy"></i>
-                            <span>Copywriting</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fas fa-hashtag"></i>
-                            <span>Social Media</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fas fa-chart-line"></i>
-                            <span>Analytics</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fas fa-search-plus"></i>
-                            <span>Investigación</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fas fa-lightbulb"></i>
-                            <span>Creatividad</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fas fa-ad"></i>
-                            <span>Publicidad en Redes Sociales</span>
-                        </div>
+            <!-- Marketing Digital -->
+            <div class="p-6 bg-gray-900/50 rounded-xl backdrop-blur-sm">
+                <h3 class="text-2xl font-semibold text-pink-300 mb-6">
+                    <i class="fas fa-bullhorn mr-2"></i>Marketing Digital
+                </h3>
+                <div class="flex flex-wrap gap-3">
+                    <div class="skill-tag">
+                        <i class="fas fa-search"></i>
+                        <span>SEO</span>
+                    </div>
+                    <div class="skill-tag">
+                        <i class="fas fa-copyright"></i>
+                        <span>Branding</span>
+                    </div>
+                    <div class="skill-tag">
+                        <i class="fas fa-pen-fancy"></i>
+                        <span>Copywriting</span>
+                    </div>
+                    <div class="skill-tag">
+                        <i class="fas fa-hashtag"></i>
+                        <span>Social Media</span>
+                    </div>
+                    <div class="skill-tag">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Analytics</span>
+                    </div>
+                    <div class="skill-tag">
+                        <i class="fas fa-search-plus"></i>
+                        <span>Investigación</span>
+                    </div>
+                    <div class="skill-tag">
+                        <i class="fas fa-lightbulb"></i>
+                        <span>Creatividad</span>
+                    </div>
+                    <div class="skill-tag">
+                        <i class="fas fa-ad"></i>
+                        <span>Publicidad en Redes Sociales</span>
                     </div>
                 </div>
-    
-                <!-- Herramientas -->
-                <div class="p-6 bg-gray-900/50 rounded-xl backdrop-blur-sm">
-                    <h3 class="text-2xl font-semibold text-pink-300 mb-6">
-                        <i class="fas fa-tools mr-2"></i>Herramientas
-                    </h3>
-                    <div class="flex flex-wrap gap-3">
-                        <div class="skill-tag">
-                            <i class="fab fa-discord"></i>
-                            <span>Discord</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fab fa-trello"></i>
-                            <span>Trello</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fab fa-google"></i>
-                            <span>Google Suite</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fas fa-chart-line"></i>
-                            <span>Similarweb</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fas fa-puzzle-piece"></i>
-                            <span>Octopus</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fas fa-chart-line"></i>
-                            <span>Miro</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fas fa-code"></i>
-                            <span>Visual Studio Code</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fas fa-clipboard"></i>
-                            <span>Notion</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fas fa-clipboard"></i>
-                            <span>Zoho Forms</span>
-                        </div>
-                        <div class="skill-tag">
-                            <i class="fas fa-cogs"></i>
-                            <span>Odoo</span>
-                        </div>
+            </div>
+
+            <!-- Herramientas -->
+            <div class="p-6 bg-gray-900/50 rounded-xl backdrop-blur-sm">
+                <h3 class="text-2xl font-semibold text-pink-300 mb-6">
+                    <i class="fas fa-tools mr-2"></i>Herramientas
+                </h3>
+                <div class="flex flex-wrap gap-3">
+                    <div class="skill-tag">
+                        <i class="fab fa-discord"></i>
+                        <span>Discord</span>
+                    </div>
+                    <div class="skill-tag">
+                        <i class="fab fa-trello"></i>
+                        <span>Trello</span>
+                    </div>
+                    <div class="skill-tag">
+                        <i class="fab fa-google"></i>
+                        <span>Google Suite</span>
+                    </div>
+                    <div class="skill-tag">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Similarweb</span>
+                    </div>
+                    <div class="skill-tag">
+                        <i class="fas fa-puzzle-piece"></i>
+                        <span>Octopus</span>
+                    </div>
+                    <div class="skill-tag">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Miro</span>
+                    </div>
+                    <div class="skill-tag">
+                        <i class="fas fa-code"></i>
+                        <span>Visual Studio Code</span>
+                    </div>
+                    <div class="skill-tag">
+                        <i class="fas fa-clipboard"></i>
+                        <span>Notion</span>
+                    </div>
+                    <div class="skill-tag">
+                        <i class="fas fa-clipboard"></i>
+                        <span>Zoho Forms</span>
+                    </div>
+                    <div class="skill-tag">
+                        <i class="fas fa-cogs"></i>
+                        <span>Odoo</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </section>
 
    <!-- Sección Proyectos -->
@@ -499,7 +502,7 @@
     </section>
 
 <!-- Formulario de contacto -->
-<section id="contacto" class="py-16 bg-gray-800 text-white mb-12"> <!-- Se añadió mb-12 para separar del footer -->
+<section id="contacto" class="py-16 bg-gray-900 text-white mb-12"> <!-- Se añadió mb-12 para separar del footer -->
     <div class="container mx-auto px-4">
         <h2 class="text-3xl md:text-6xl font-bold mb-12 text-center text-white" id="contacto-title">
             <i class="fas fa-envelope text-pink-400 mb-4"></i>
